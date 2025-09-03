@@ -126,16 +126,16 @@ if selected_opening and selected_opening != 'No openings available':
                         st.image(file_path, caption=heatmap_files[i + j].replace('_', ' ').replace('.png', ''))
 
 # New Section for outcome prediction
-st.header('What is the likely outcome of my chess game?')
+# st.header('What is the likely outcome of my chess game?')
 
 # User inputs
-rating_diff_input = st.number_input("Enter the rating difference (negative if you are rated lower):", min_value=-800, max_value=800, step=10, value=0, format="%d")
+# rating_diff_input = st.number_input("Enter the rating difference (negative if you are rated lower):", min_value=-800, max_value=800, step=10, value=0, format="%d")
 
 # Adjust rating difference based on user color
-if selected_perspective == 'Black':
-    rating_diff = -rating_diff_input
-else:
-    rating_diff = rating_diff_input
+# if selected_perspective == 'Black':
+    # rating_diff = -rating_diff_input
+# else:
+    # rating_diff = rating_diff_input
 
 # Predict button
 # if st.button('Predict Outcome'):
@@ -156,4 +156,5 @@ else:
     # st.markdown(f"<h1 style='color: green;'>Win Probability: {win_proba*100:.2f}%</h1>", unsafe_allow_html=True)
     # st.markdown(f"<h1 style='color: red;'>Lose Probability: {lose_proba*100:.2f}%</h1>", unsafe_allow_html=True)
     # st.markdown(f"<h1 style='color: yellow;'>Tie Probability: {tie_proba*100:.2f}%</h1>", unsafe_allow_html=True)
+
 
