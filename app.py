@@ -2,13 +2,13 @@ import pandas as pd
 import os
 import streamlit as st
 import numpy as np
-from joblib import load
+# from joblib import load
 
 # Load the dataframe containing the scores
 openings_df = pd.read_csv("openings_analysis.csv")
 
 # Load the trained model
-model = load('best_logistic_regression_model.joblib')
+# model = load('best_logistic_regression_model.joblib')
 
 # Path to the directory where the images are stored
 heatmap_dir = 'heatmaps'
@@ -138,21 +138,22 @@ else:
     rating_diff = rating_diff_input
 
 # Predict button
-if st.button('Predict Outcome'):
+# if st.button('Predict Outcome'):
     # Making prediction
-    prediction_proba = model.predict_proba(np.array([[rating_diff]]))
+    # prediction_proba = model.predict_proba(np.array([[rating_diff]]))
 
     # Adjusting prediction labels based on user color
-    if selected_perspective == 'White':
-        win_proba = prediction_proba[0][2]  # Index of WhiteWin
-        lose_proba = prediction_proba[0][0]  # Index of BlackWin
-    else:
-        win_proba = prediction_proba[0][0]  # Index of BlackWin
-        lose_proba = prediction_proba[0][2]  # Index of WhiteWin
+    # if selected_perspective == 'White':
+        # win_proba = prediction_proba[0][2]  # Index of WhiteWin
+        # lose_proba = prediction_proba[0][0]  # Index of BlackWin
+    # else:
+        # win_proba = prediction_proba[0][0]  # Index of BlackWin
+        # lose_proba = prediction_proba[0][2]  # Index of WhiteWin
     
-    tie_proba = prediction_proba[0][1]  # Index of Tie
+    # tie_proba = prediction_proba[0][1]  # Index of Tie
 
     # Displaying predictions
-    st.markdown(f"<h1 style='color: green;'>Win Probability: {win_proba*100:.2f}%</h1>", unsafe_allow_html=True)
-    st.markdown(f"<h1 style='color: red;'>Lose Probability: {lose_proba*100:.2f}%</h1>", unsafe_allow_html=True)
-    st.markdown(f"<h1 style='color: yellow;'>Tie Probability: {tie_proba*100:.2f}%</h1>", unsafe_allow_html=True)
+    # st.markdown(f"<h1 style='color: green;'>Win Probability: {win_proba*100:.2f}%</h1>", unsafe_allow_html=True)
+    # st.markdown(f"<h1 style='color: red;'>Lose Probability: {lose_proba*100:.2f}%</h1>", unsafe_allow_html=True)
+    # st.markdown(f"<h1 style='color: yellow;'>Tie Probability: {tie_proba*100:.2f}%</h1>", unsafe_allow_html=True)
+
